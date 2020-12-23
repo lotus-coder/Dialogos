@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity  implements DialogoUsuario.OnDialogoConfirmacionListener{
 
     private         DialogoUsuario d;
-    private EditText usuario, contrasena;
+    //private EditText usuario, contrasena;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity  implements DialogoUsuario.O
         contrasena = findViewById(R.id.Contrasena);*/
         d  = new DialogoUsuario();
         d.show(getSupportFragmentManager(),null);
-        try {
+/*        try {
             finalize();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-        }
+        }*/
     }
 //
 
@@ -50,9 +50,12 @@ public class MainActivity extends AppCompatActivity  implements DialogoUsuario.O
 
     @Override
     public void onPossitiveButtonClick() {
- /*       if(usuario.getText().toString().equals("usuario1") && contrasena.getText().toString().equals("123456")){
-*/
+        String usuario =d.getUsuario().getText().toString();
+
+        if(usuario.equals("usuario1") && d.getContrasena().getText().toString().equals("123456")){
+/*
         if(d.dameLogin()){
+*/
             Toast.makeText(this, "Login correcto", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this,PestanasMain.class);
             startActivity(i);
