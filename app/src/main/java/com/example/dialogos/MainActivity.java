@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity  implements DialogoUsuario.O
             throwable.printStackTrace();
         }
     }
-
+//
 
 /*    private void eventos (){
         btnLogin.setOnClickListener(new View.OnClickListener() {
