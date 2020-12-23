@@ -27,20 +27,24 @@ public class DialogoUsuario extends DialogFragment  {
         contrasena = v.findViewById(R.id.Contrasena);
         builder.setView(inflater.inflate(R.layout.dialogo_usuario, null)).
             setPositiveButton("Aceptar",new DialogInterface.OnClickListener() {
-        public void onClick(DialogInterface dialog, int id) {
-            if(usuario.getText().toString().equals("usuario1") && contrasena.getText().toString().equals("123456")){
-                listener.onPossitiveButtonClick();
-            }else {
-                try {
-                    finalize();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                }
+            public void onClick(DialogInterface dialog, int id) {
+                    listener.onPossitiveButtonClick();
             }
+        });
+        return builder.create();
+    }
+
+
+    public boolean dameLogin(){
+        boolean estaBien = false;
+        if(usuario.getText().toString().equals("u") && contrasena.getText().toString().equals("u")){
+            estaBien = true;
         }
-    });
-    return builder.create();
-}
+        return  estaBien;
+    }
+
+
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
