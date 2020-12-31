@@ -30,21 +30,12 @@ public class MainActivity extends AppCompatActivity  implements DialogoUsuario.O
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }*/
+
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+            return;
+        }
     }
-//
-
-/*    private void eventos (){
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(usuario.getText().toString().equals("usuario1") && contrasena.getText().toString().equals("123456")){
-                    Intent i = new Intent(MainActivity.this,PestanasMain.class);
-                    startActivity(i);
-                }
-            }
-        });
-    }*/
 
 
 
